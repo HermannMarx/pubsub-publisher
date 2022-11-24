@@ -12,7 +12,13 @@ export class CatPublisher {
   async publish(): Promise<void> {
     console.log('Published cat message!');
     await this.topic.publishMessage({
-      json: { cats: ['Maine Coon Cat', 'Persian Cat', 'Burmese Cat'] },
+      json: {
+        name: 'Cat',
+        animal: true,
+        mammal: true,
+        size: 'small',
+        population: 350000000000,
+      },
       attributes: { name: 'CatPublisher' },
     });
   }
