@@ -5,9 +5,7 @@ import { PubSub } from '@google-cloud/pubsub';
 export class CatPublisher {
   pubsub = new PubSub();
 
-  topic = this.pubsub.topic(
-    'projects/terraform-test-368613/topics/terraform_topic_123',
-  );
+  topic = this.pubsub.topic('projects/terraform-test-368613/topics/cat_topic');
 
   async publish(): Promise<void> {
     console.log('Published cat message!');
